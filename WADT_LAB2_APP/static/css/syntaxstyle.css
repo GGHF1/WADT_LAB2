@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.upper-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #282c34;
+    border-bottom: 1px solid #444;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 {
+    font-size: 24px;
+    color: #d4d4d4;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drawer-toggle {
+    position: absolute;
+    left: 20px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.drawer-toggle img {
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #282c34;
+    border-right: 1px solid #444;
+    padding: 10px;
+    position: fixed;
+    top: 48px; 
+    left: -200px; 
+    height: 250px;
+    transition: left 0.3s ease;
+    z-index: 1001; 
+    overflow-y: auto; 
+    border-bottom-right-radius: 8px;
+}
+
+.sidebar.open {
+    left: 0; 
+}
+
+.sidebar h2 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+#language-selector, #theme-selector {
+    width: 160px;
+    margin: 15px 10px;
+    padding: 8px;
+    background-color: #3a3f4a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#language-selector:hover , #theme-selector:hover {
+    background-color: #4d5361;
+}
+
+#language-selector option, #theme-selector option {
+    background-color: #3a3f4a;
+    color: #ffffff;
+}
+
+footer {
+    padding: 10px;
+    background: #252836;
+    color: #888;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.editor-container {
+    width: 700px;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 100px; 
+}
+
+.CodeMirror {
+    height: 100%;
+    font-size: 16px;
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 715px) {
+    .editor-container {
+        width: 80%;
+    }
+
+    .sidebar{
+        width: 150px;
+        height: 230px;
+    }
+
+    #language-selector, #theme-selector {
+        width: 110px;
+    }
+
+    .sidebar h2 {
+        font-size: 16px;
+    }
+}

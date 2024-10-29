@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax Highlighter</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/material-palenight.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/dracula.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/ayu-dark.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/syntaxstyle.css' %}">
+</head>
+<body>
+    <div class="upper-banner">
+        <button class="drawer-toggle">
+            <img src="{% static 'images/drawer.png' %}" alt="Menu Icon">
+        </button>
+        <h1>Syntax Highlighter</h1>   
+    </div>
+    <div class="sidebar">
+        <h2>Languages</h2>
+        <select id="language-selector" onchange="switchLanguage()">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="go">Go</option>
+        </select>
+        <h2>Themes</h2>
+        <select id="theme-selector" onchange="switchTheme()">
+            <option value="material-palenight">Material Palenight</option>
+            <option value="dracula">Dracula</option>
+            <option value="ayu-dark">Ayu Dark</option>
+        </select>
+    </div>
+
+    <div class="editor-container" id="editor-container"></div>
+
+    <footer>© 2024 Syntax Highlighter. All rights reserved.</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/mode/go/go.min.js"></script>
+    <script src="{% static 'js/syntaxscript.js' %}"></script>
+
+</body>
+</html>
